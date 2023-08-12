@@ -11,6 +11,6 @@ public class Algo4 {
         for (int i = 0; i < nums.length; i++) {
             System.out.print(nums[i] +", ");  // print array values
         }
-        System.out.println("\b\b} "); // remove end commma and add curly bracket close
+        System.out.println("\b\b}"); // remove end commma and add curly bracket close
     }
 }
