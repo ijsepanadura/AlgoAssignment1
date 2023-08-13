@@ -6,11 +6,11 @@ public class Algo8 {
         int[] numB = {7, 8, -8, 2, 1, -9, 6};
         int numALen = numA.length;
         int numBLen = numB.length;
-        int[] check = new int[7];
-        int[] A_check = new int[7];
-        int[] B_check = new int[7];
+        int[] check = new int[numA.length];   // declared an array for fint intersect (A∩B) value
+        int[] A_check = new int[numA.length]; // declared an array to find A-(A∩B)
+        int[] B_check = new int[numB.length]; // declared an array to find B-(A∩B)
         
-        int count=0;
+        int count=0;    // variable for count element
         int count2=0;
         int count3=0;
         loop:
@@ -35,29 +35,24 @@ public class Algo8 {
             B_check[count3]=numB[i]; // B-(A∩B)
             count3++;
         }
-        System.out.println(count);
-        System.out.println(count3);
-        for(int i=0; i<B_check.length; i++){
-            System.out.println(B_check[i]);
-        }
-        int[] intersec = new int[count];
-        int[] a_intSec = new int[count2];
-        int[] b_intSec = new int[count3];
+        int[] intersec = new int[count];  // (A∩B) Array
+        int[] a_intSec = new int[count2]; // A-(A∩B) Array
+        int[] b_intSec = new int[count3]; // B-(A∩B) Array
         
         for (int i = 0; i < count; i++) {
-            intersec[i] = check[i];
+            intersec[i] = check[i];        // Element add for (A∩B) Array
         }
-        String stringABintSec = Arrays.toString(intersec);
+        String stringABintSec = Arrays.toString(intersec);  //convert int array to String
 
         for (int i = 0; i < a_intSec.length; i++) {
-            a_intSec[i]= A_check[i];
+            a_intSec[i]= A_check[i];        // Element add for A-(A∩B) Array
         }
-        String stringA_intsec = Arrays.toString(a_intSec);
+        String stringA_intsec = Arrays.toString(a_intSec); //convert int array to String
         
         for (int i = 0; i < b_intSec.length; i++) {
-            b_intSec[i]= B_check[i];
+            b_intSec[i]= B_check[i];        // Element add for B-(A∩B) Array
         }
-        String stringB_intsec = Arrays.toString(b_intSec);
+        String stringB_intsec = Arrays.toString(b_intSec); //convert int array to String
 
         System.out.println("(numA \u2229 numB) is : "+ stringABintSec);
         System.out.println("(numA \u222A numB) is : "+ stringA_intsec+"\b, " +stringABintSec.substring(1,stringABintSec.length()) + "\b, "+stringB_intsec.substring(1,stringB_intsec.length()));
