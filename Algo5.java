@@ -5,27 +5,22 @@ public class Algo5 {
     public static void main(String[] args) {
         loop:
         do{
-            byte ascii;
+            String reverse="";
             System.out.print("Enter a text : ");
-            byte[] name = scanner.nextLine().strip().getBytes();
-            if(name.length==0){
+            String name = scanner.nextLine().strip();
+
+            if(name.length()==0){
                 System.out.println("Text cannot be Empty..");
                 continue;
             }
-            for (int i = 0; i < name.length/2; i++) {
-                if(name[i]<0 || name[i]>127 ||name[name.length-1-i]<0 || name[name.length-1-i]>127){
+            for (int i = 0; i < name.length(); i++) {
+                if(name.charAt(i)<0 || name.charAt(i)>127){
                     System.out.println("you can only use ASCII input ! try again..");
                     continue loop;
                 }
-                ascii= name[name.length-1-i];
-                name[name.length-1-i] = name[i];   // interchange end and start values
-                name[i]=ascii;
+                reverse = Character.toString(name.charAt(i)) + reverse;
             }
-            System.out.print("reversed input is : ");
-            for (int i = 0; i < name.length; i++) {
-                System.out.print((char)name[i]);  // print array values
-            }
-            System.out.println();
+            System.out.println("reversed input is : " + reverse);
         }while(true);   
     }
 }

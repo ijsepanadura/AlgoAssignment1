@@ -6,36 +6,24 @@ public class Algo6 {
         loop:
         do{
             String name;
-            String collect="";
-            String[] wordCut;
-            char[] word;
-            int count=0;
-            int space =0;
-            System.out.print("Enter a text : ");
+            String[] word;
+            System.out.print("Enter a sentence: ");
             name = scanner.nextLine().strip();
             if(name.length()==0){
-                System.out.println("Text cannot be Empty..");
+                System.out.println("sentence cannot be Empty..");
                 continue;
             }
-            word = name.toCharArray();
-            for (int i = 0; i < word.length; i++) {
-                if((char)word[i]<0 || (char)word[i]>127 ){
+            for (int i = 0; i < name.length(); i++) {
+                if(name.charAt(i)<0 || name.charAt(i)>127 ){
                     System.out.println("You can only use ASCII charactors ! try again..");
                     continue loop;
-                }
-                if(word[i]==' ')space++;
+                }  
             }
-            wordCut = new String[space+1];
-            for(int i=word.length-1; i>=0 ;i--){ 
-                if(word[i] != ' ')collect = Character.toString(word[i]) + collect;
-                if(word[i]==' ' || i==0){
-                    wordCut[count]= collect;
-                    System.out.print(wordCut[count]+" ");
-                    count++;
-                    collect="";          
-                }
+            word = name.split(" ");
+            for(int i=0; i< word.length; i++){
+                System.out.print(word[word.length-1-i]+" ");
             }
-            System.out.println(); 
+            System.out.println();
         }while(true);
     }
 }
