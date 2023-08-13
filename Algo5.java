@@ -26,8 +26,6 @@ public class Algo5 {
                 System.out.print((char)name[i]);  // print array values
             }
             System.out.println();
-        }while(true);
-        
-        
+        }while(true);   
     }
 }
