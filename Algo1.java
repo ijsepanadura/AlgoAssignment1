@@ -15,7 +15,7 @@ public class Algo1{
                 System.out.print("Enter a positive number for Fibonancci : ");
                 num = scanner.nextInt();                // getting input
                 scanner.skip(System.lineSeparator());   // skip new line command which is waiting
-                if(num<0){
+                if(num<0 ){
                     System.out.println("Please enter a positive number");
                     num = 1;
                 }else {

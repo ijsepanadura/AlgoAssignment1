@@ -20,6 +20,7 @@ public class Algo7 {
             sortLength = word[0].length();
             longLength = word[0].length();
             for(int i=1; i<word.length; i++){
+                if(word[i].strip().length()==0)continue;
                 if(word[i].length()>longLength){
                     longLength=word[i].length();
                     longIndex=i;
@@ -29,8 +30,8 @@ public class Algo7 {
                     sortIndex=i;  
                 }
             }
-            System.out.println("longest word is : "+word[longIndex]);
-            System.out.println("sortest word is : "+word[sortIndex]);
+            System.out.println("longest word is : "+word[longIndex]+" & length is : "+ word[longIndex].length());
+            System.out.println("sortest word is : "+word[sortIndex]+" & length is : "+ word[sortIndex].length());
         }while(true);
     }
 }
