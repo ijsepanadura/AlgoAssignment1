@@ -6,7 +6,7 @@ public class Algo8 {
         int[] numB = {7, 8, -8, 2, 1, -9, 6};
         int numALen = numA.length;
         int numBLen = numB.length;
-        int[] check = new int[numA.length];   // declared an array for fint intersect (A∩B) value
+        int[] check = new int[numA.length];   // declared an array for find intersect (A∩B) value
         int[] A_check = new int[numA.length]; // declared an array to find A-(A∩B)
         int[] B_check = new int[numB.length]; // declared an array to find B-(A∩B)
         
